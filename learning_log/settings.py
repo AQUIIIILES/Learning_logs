@@ -88,18 +88,7 @@ WSGI_APPLICATION = 'learning_log.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-import pymysql
-
-pymysql.version_info = (1, 4, 0, "final", 0)  # Simula versão compatível
-pymysql.install_as_MySQLdb()
-
-# Corrige erro de 'decode' no Django 3.x com PyMySQL 0.9.3
-import django.db.backends.mysql.operations
-
-def last_executed_query(self, cursor, query, params):
-    return query  # Evita chamar .decode()
-
-django.db.backends.mysql.operations.DatabaseOperations.last_executed_query = last_executed_query
+import os
 
 DATABASES = {
     'default': {
