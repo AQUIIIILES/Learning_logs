@@ -8,7 +8,7 @@ packaging==20.9
 pefile==2019.4.18
 PyInstaller==3.6
 pyinstaller-hooks-contrib==2020.6
-PyMySQL==0.9.3
+PyMySQL==1.1.1
 pyparsing==2.4.7
 pytz==2025.1
 pywin32-ctypes==0.2.0
