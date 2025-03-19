@@ -8,7 +8,7 @@ packaging==23.2
 pefile==2023.2.7
 PyInstaller==5.13.2
 pyinstaller-hooks-contrib==2023.12
-PyMySQL==1.1.1
+mysqlclient==2.1.1
 pyparsing==3.1.1
 pytz==2024.1
 soupsieve==2.5
