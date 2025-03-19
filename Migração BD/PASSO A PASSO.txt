@@ -1,0 +1,15 @@
+1 - Realize as modificações necessárias em settings.py
+2 - Execute os comandos abaixo para migrar o BD de sqlite para mysql
+
+python manage.py dumpdata --output=datadump.json --indent 2 --natural-primary --natural-foreign
+
+#Este passo deve ser obrigatoriamente feito no Power Shell, porque dentro do VSCODE dá erro
+Get-Content datadump.json | Out-File -Encoding utf8 datadump_fixed.json
+
+#O arquivo remove_bom.py tem que estar na pasta do projeto
+python .\remove_bom.py
+
+python .\manage.py migrate --run-syncdb
+
+python .\manage.py loaddata datadump_nobom.json
+

@@ -1,0 +1,30 @@
+{% extends "learning_logs/base.html" %}
+{% load bootstrap3 %}
+
+{% block header %}
+    <h1>Criar conta<h1>
+{% endblock header %}
+
+{% block content %}
+    {% if form.errors %}
+        <p style="color: red;"> O nome do usuário deve conter no mínimo 8 caracteres</p>
+        <p style="color: red;"> Deve conter letras maiusculas, minusculas, números e caracteres especiais</p>
+        <p style="color: red;"> A senhas precisão coincidirem</p>
+    {% endif %}
+    <form action="{% url 'register' %}" method="post" class="ul-none col-md-3">
+        {% csrf_token %}
+        
+        {% bootstrap_field form.username class="form-control"  %}
+        {% bootstrap_field form.password1 class="form-control" %}
+        {% bootstrap_field form.password2 class="form-control" %}
+        
+        {% buttons %}
+            <button name="submit" class="btn btn-primary">Cadastrar</button>
+            <input type="hidden" name="next" value="{% url 'index' %}"/>
+        {% endbuttons %}
+
+        </div>
+        
+    </form>
+
+{% endblock content %}
