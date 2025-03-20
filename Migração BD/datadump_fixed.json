@@ -1,0 +1,869 @@
+[
+  {
+    "model": "contenttypes.contenttype",
+    "fields": {
+      "app_label": "admin",
+      "model": "logentry"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "fields": {
+      "app_label": "auth",
+      "model": "permission"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "fields": {
+      "app_label": "auth",
+      "model": "group"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "fields": {
+      "app_label": "auth",
+      "model": "user"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "fields": {
+      "app_label": "contenttypes",
+      "model": "contenttype"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "fields": {
+      "app_label": "sessions",
+      "model": "session"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "fields": {
+      "app_label": "learning_logs",
+      "model": "topic"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "fields": {
+      "app_label": "learning_logs",
+      "model": "entry"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "ygmztr2r26mycppiwkz3zfp4ibsrepvk",
+    "fields": {
+      "session_data": "OWUxOTg3ZDY1YTY1MDI4M2M0Y2Y5MTUzYjZmMGM3YWNiZDNiM2Y4MTp7Il9hdXRoX3VzZXJfaWQiOiIyIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiI2MjZmMjFiYWI2ZmZhMjhlYmVjYmJiZDg2Mjc3ZDA3ZDVmMzFjMWM4In0=",
+      "expire_date": "2025-03-31T19:50:08.347Z"
+    }
+  },
+  {
+    "model": "learning_logs.entry",
+    "pk": 1,
+    "fields": {
+      "topic": 3,
+      "text": "Abertura gambito da rainha é com o peão da rainha.",
+      "date_added": "2024-10-25T18:51:04.673Z"
+    }
+  },
+  {
+    "model": "learning_logs.entry",
+    "pk": 2,
+    "fields": {
+      "topic": 4,
+      "text": "Este é o curso de Django.",
+      "date_added": "2024-10-25T18:52:29.035Z"
+    }
+  },
+  {
+    "model": "learning_logs.entry",
+    "pk": 3,
+    "fields": {
+      "topic": 4,
+      "text": "A aula de Django de hoje foi excelente!",
+      "date_added": "2024-10-31T20:06:02.044Z"
+    }
+  },
+  {
+    "model": "learning_logs.entry",
+    "pk": 4,
+    "fields": {
+      "topic": 3,
+      "text": "Xeque pastor é com o bispo.",
+      "date_added": "2025-01-17T14:13:35.648Z"
+    }
+  },
+  {
+    "model": "learning_logs.entry",
+    "pk": 5,
+    "fields": {
+      "topic": 3,
+      "text": "Mate do Pastor é efetuado pelas brancas durante a abertura, que segue a ideia de atacar o peão que se encontra na casa f7 e que é defendido apenas pelo rei. Estes são os lances principais do mate do pastor.",
+      "date_added": "2025-01-17T15:12:44.141Z"
+    }
+  },
+  {
+    "model": "learning_logs.entry",
+    "pk": 6,
+    "fields": {
+      "topic": 8,
+      "text": "Fiz o curso de Flask em meados de 2024",
+      "date_added": "2025-01-24T14:24:28.636Z"
+    }
+  },
+  {
+    "model": "learning_logs.entry",
+    "pk": 7,
+    "fields": {
+      "topic": 5,
+      "text": "Retomei em 2025",
+      "date_added": "2025-01-24T14:25:51.422Z"
+    }
+  },
+  {
+    "model": "learning_logs.entry",
+    "pk": 8,
+    "fields": {
+      "topic": 9,
+      "text": "Avançar nos cursos em 2025",
+      "date_added": "2025-01-24T14:29:24.598Z"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "fields": {
+      "name": "Can add log entry",
+      "content_type": [
+        "admin",
+        "logentry"
+      ],
+      "codename": "add_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "fields": {
+      "name": "Can change log entry",
+      "content_type": [
+        "admin",
+        "logentry"
+      ],
+      "codename": "change_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "fields": {
+      "name": "Can delete log entry",
+      "content_type": [
+        "admin",
+        "logentry"
+      ],
+      "codename": "delete_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "fields": {
+      "name": "Can view log entry",
+      "content_type": [
+        "admin",
+        "logentry"
+      ],
+      "codename": "view_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "fields": {
+      "name": "Can add permission",
+      "content_type": [
+        "auth",
+        "permission"
+      ],
+      "codename": "add_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "fields": {
+      "name": "Can change permission",
+      "content_type": [
+        "auth",
+        "permission"
+      ],
+      "codename": "change_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "fields": {
+      "name": "Can delete permission",
+      "content_type": [
+        "auth",
+        "permission"
+      ],
+      "codename": "delete_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "fields": {
+      "name": "Can view permission",
+      "content_type": [
+        "auth",
+        "permission"
+      ],
+      "codename": "view_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "fields": {
+      "name": "Can add group",
+      "content_type": [
+        "auth",
+        "group"
+      ],
+      "codename": "add_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "fields": {
+      "name": "Can change group",
+      "content_type": [
+        "auth",
+        "group"
+      ],
+      "codename": "change_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "fields": {
+      "name": "Can delete group",
+      "content_type": [
+        "auth",
+        "group"
+      ],
+      "codename": "delete_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "fields": {
+      "name": "Can view group",
+      "content_type": [
+        "auth",
+        "group"
+      ],
+      "codename": "view_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "fields": {
+      "name": "Can add user",
+      "content_type": [
+        "auth",
+        "user"
+      ],
+      "codename": "add_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "fields": {
+      "name": "Can change user",
+      "content_type": [
+        "auth",
+        "user"
+      ],
+      "codename": "change_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "fields": {
+      "name": "Can delete user",
+      "content_type": [
+        "auth",
+        "user"
+      ],
+      "codename": "delete_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "fields": {
+      "name": "Can view user",
+      "content_type": [
+        "auth",
+        "user"
+      ],
+      "codename": "view_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "fields": {
+      "name": "Can add content type",
+      "content_type": [
+        "contenttypes",
+        "contenttype"
+      ],
+      "codename": "add_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "fields": {
+      "name": "Can change content type",
+      "content_type": [
+        "contenttypes",
+        "contenttype"
+      ],
+      "codename": "change_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "fields": {
+      "name": "Can delete content type",
+      "content_type": [
+        "contenttypes",
+        "contenttype"
+      ],
+      "codename": "delete_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "fields": {
+      "name": "Can view content type",
+      "content_type": [
+        "contenttypes",
+        "contenttype"
+      ],
+      "codename": "view_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "fields": {
+      "name": "Can add session",
+      "content_type": [
+        "sessions",
+        "session"
+      ],
+      "codename": "add_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "fields": {
+      "name": "Can change session",
+      "content_type": [
+        "sessions",
+        "session"
+      ],
+      "codename": "change_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "fields": {
+      "name": "Can delete session",
+      "content_type": [
+        "sessions",
+        "session"
+      ],
+      "codename": "delete_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "fields": {
+      "name": "Can view session",
+      "content_type": [
+        "sessions",
+        "session"
+      ],
+      "codename": "view_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "fields": {
+      "name": "Can add topic",
+      "content_type": [
+        "learning_logs",
+        "topic"
+      ],
+      "codename": "add_topic"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "fields": {
+      "name": "Can change topic",
+      "content_type": [
+        "learning_logs",
+        "topic"
+      ],
+      "codename": "change_topic"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "fields": {
+      "name": "Can delete topic",
+      "content_type": [
+        "learning_logs",
+        "topic"
+      ],
+      "codename": "delete_topic"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "fields": {
+      "name": "Can view topic",
+      "content_type": [
+        "learning_logs",
+        "topic"
+      ],
+      "codename": "view_topic"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "fields": {
+      "name": "Can add entry",
+      "content_type": [
+        "learning_logs",
+        "entry"
+      ],
+      "codename": "add_entry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "fields": {
+      "name": "Can change entry",
+      "content_type": [
+        "learning_logs",
+        "entry"
+      ],
+      "codename": "change_entry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "fields": {
+      "name": "Can delete entry",
+      "content_type": [
+        "learning_logs",
+        "entry"
+      ],
+      "codename": "delete_entry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "fields": {
+      "name": "Can view entry",
+      "content_type": [
+        "learning_logs",
+        "entry"
+      ],
+      "codename": "view_entry"
+    }
+  },
+  {
+    "model": "auth.user",
+    "fields": {
+      "password": "pbkdf2_sha256$870000$6IxWCl7JMGLiHS890Pn43D$mR2epsztCaZcaHR1wAJb0oMgkQU2ICGU3cV3T3pUd04=",
+      "last_login": "2025-01-28T17:38:34.767Z",
+      "is_superuser": true,
+      "username": "admin",
+      "first_name": "",
+      "last_name": "",
+      "email": "carlos.rafael.ufms@gmail.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-10-25T14:43:52.408Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "fields": {
+      "password": "pbkdf2_sha256$150000$Akr0p5yjODyD$BRwzt5tYrtqjHVUTGFgozqqPDCvxsoJCdpjNv3tY4Fs=",
+      "last_login": "2025-03-17T19:50:08.335Z",
+      "is_superuser": false,
+      "username": "CARLOS",
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2025-01-23T19:12:59.946Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "fields": {
+      "password": "pbkdf2_sha256$870000$CpZZnfVkbJTaajQT4insMV$Pw7Qzhf4Rbxvzsu5d4+rRG8HER8jq7auUK1YgrxekLg=",
+      "last_login": "2025-01-24T18:47:24.523Z",
+      "is_superuser": false,
+      "username": "Rafael",
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2025-01-24T13:45:52.601Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "fields": {
+      "password": "pbkdf2_sha256$870000$IMLqHDM22NCUcV4gPoZH2k$DiO2YHWClLsX0bDd7w5zJwx1e0K+MMKO95I7OB467fA=",
+      "last_login": "2025-01-28T17:38:15.990Z",
+      "is_superuser": false,
+      "username": "LOPES",
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2025-01-28T17:38:15.133Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "learning_logs.topic",
+    "pk": 3,
+    "fields": {
+      "text": "Xadrez",
+      "date_added": "2024-10-25T14:59:48.699Z",
+      "owner": [
+        "CARLOS"
+      ]
+    }
+  },
+  {
+    "model": "learning_logs.topic",
+    "pk": 4,
+    "fields": {
+      "text": "Programação",
+      "date_added": "2024-10-25T18:41:19.342Z",
+      "owner": [
+        "CARLOS"
+      ]
+    }
+  },
+  {
+    "model": "learning_logs.topic",
+    "pk": 5,
+    "fields": {
+      "text": "Curso de Python",
+      "date_added": "2024-10-29T17:31:38.944Z",
+      "owner": [
+        "CARLOS"
+      ]
+    }
+  },
+  {
+    "model": "learning_logs.topic",
+    "pk": 6,
+    "fields": {
+      "text": "Matemática",
+      "date_added": "2024-10-31T18:41:36.798Z",
+      "owner": [
+        "CARLOS"
+      ]
+    }
+  },
+  {
+    "model": "learning_logs.topic",
+    "pk": 7,
+    "fields": {
+      "text": "Inglês",
+      "date_added": "2024-10-31T18:42:20.894Z",
+      "owner": [
+        "CARLOS"
+      ]
+    }
+  },
+  {
+    "model": "learning_logs.topic",
+    "pk": 8,
+    "fields": {
+      "text": "Flask",
+      "date_added": "2025-01-24T14:23:40.356Z",
+      "owner": [
+        "Rafael"
+      ]
+    }
+  },
+  {
+    "model": "learning_logs.topic",
+    "pk": 9,
+    "fields": {
+      "text": "IA",
+      "date_added": "2025-01-24T14:28:59.589Z",
+      "owner": [
+        "CARLOS"
+      ]
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+      "action_time": "2024-10-25T14:48:16.796Z",
+      "user": [
+        "admin"
+      ],
+      "content_type": [
+        "learning_logs",
+        "topic"
+      ],
+      "object_id": "1",
+      "object_repr": "Topic object (1)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+      "action_time": "2024-10-25T14:48:49.254Z",
+      "user": [
+        "admin"
+      ],
+      "content_type": [
+        "learning_logs",
+        "topic"
+      ],
+      "object_id": "1",
+      "object_repr": "Topic object (1)",
+      "action_flag": 2,
+      "change_message": "[]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+      "action_time": "2024-10-25T14:49:28.108Z",
+      "user": [
+        "admin"
+      ],
+      "content_type": [
+        "learning_logs",
+        "topic"
+      ],
+      "object_id": "1",
+      "object_repr": "Topic object (1)",
+      "action_flag": 2,
+      "change_message": "[]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+      "action_time": "2024-10-25T14:49:54.545Z",
+      "user": [
+        "admin"
+      ],
+      "content_type": [
+        "learning_logs",
+        "topic"
+      ],
+      "object_id": "1",
+      "object_repr": "Topic object (1)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+      "action_time": "2024-10-25T14:50:08.203Z",
+      "user": [
+        "admin"
+      ],
+      "content_type": [
+        "learning_logs",
+        "topic"
+      ],
+      "object_id": "2",
+      "object_repr": "Topic object (2)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+      "action_time": "2024-10-25T14:59:48.700Z",
+      "user": [
+        "admin"
+      ],
+      "content_type": [
+        "learning_logs",
+        "topic"
+      ],
+      "object_id": "3",
+      "object_repr": "Xadrez",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 7,
+    "fields": {
+      "action_time": "2024-10-25T15:00:01.692Z",
+      "user": [
+        "admin"
+      ],
+      "content_type": [
+        "learning_logs",
+        "topic"
+      ],
+      "object_id": "2",
+      "object_repr": "Xadrez",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 8,
+    "fields": {
+      "action_time": "2024-10-25T18:41:19.343Z",
+      "user": [
+        "admin"
+      ],
+      "content_type": [
+        "learning_logs",
+        "topic"
+      ],
+      "object_id": "4",
+      "object_repr": "Programação",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 9,
+    "fields": {
+      "action_time": "2024-10-25T18:51:04.675Z",
+      "user": [
+        "admin"
+      ],
+      "content_type": [
+        "learning_logs",
+        "entry"
+      ],
+      "object_id": "1",
+      "object_repr": "Abertura gambito da rainha é com o peão da rainha....",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 10,
+    "fields": {
+      "action_time": "2024-10-25T18:52:29.037Z",
+      "user": [
+        "admin"
+      ],
+      "content_type": [
+        "learning_logs",
+        "entry"
+      ],
+      "object_id": "2",
+      "object_repr": "Este é o curso de Django....",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 11,
+    "fields": {
+      "action_time": "2024-10-29T17:31:38.946Z",
+      "user": [
+        "admin"
+      ],
+      "content_type": [
+        "learning_logs",
+        "topic"
+      ],
+      "object_id": "5",
+      "object_repr": "Curso de Python",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 12,
+    "fields": {
+      "action_time": "2025-01-23T19:12:24.277Z",
+      "user": [
+        "admin"
+      ],
+      "content_type": [
+        "auth",
+        "user"
+      ],
+      "object_id": "2",
+      "object_repr": "Carlos",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 13,
+    "fields": {
+      "action_time": "2025-01-23T19:12:24.277Z",
+      "user": [
+        "admin"
+      ],
+      "content_type": [
+        "auth",
+        "user"
+      ],
+      "object_id": "3",
+      "object_repr": "Carlos1",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  }
+]
