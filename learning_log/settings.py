@@ -96,15 +96,15 @@ DATABASES = {
     #     'OPTIONS': {
     #         'charset': 'utf8mb4',
     #     } 
-        'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'AQUILES$learning_logs',
-        'USER': 'AQUILES',
-        'PASSWORD': 'Cr@102030',
-        'HOST': 'AQUILES.mysql.pythonanywhere-services.com',
-        'PORT': '3306',
-        'OPTIONS': {
-            'charset': 'utf8mb4',
+    'default': {
+    'ENGINE': 'django.db.backends.mysql',
+    'NAME': 'AQUILES$learning_logs',
+    'USER': 'AQUILES',
+    'PASSWORD': 'Cr@102030',
+    'HOST': 'AQUILES.mysql.pythonanywhere-services.com',
+    'PORT': '3306',
+    'OPTIONS': {
+        'charset': 'utf8mb4',
         }
     }
 }
