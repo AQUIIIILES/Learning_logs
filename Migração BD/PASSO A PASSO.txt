@@ -4,9 +4,14 @@
 python manage.py dumpdata --output=datadump.json --indent 2 --natural-primary --natural-foreign
 
 #Este passo deve ser obrigatoriamente feito no Power Shell, porque dentro do VSCODE dá erro
-Get-Content datadump.json | Out-File -Encoding utf8 datadump_fixed.json
 
-#O arquivo remove_bom.py tem que estar na pasta do projeto
+#Se os passos acima não resolverem tente estes passos
+python manage.py dumpdata --output=datadump.json --indent 2 --natural-primary --natural-foreign --format=json | Out-File -Encoding utf8 datadump_fixed.json
+
+#Rode o fix_json.py para corrigir os caracteres estranhos
+python .\fix_json.py
+
+#O arquivo remove_bom.py apenas remove o BOM
 python .\remove_bom.py
 
 python .\manage.py migrate --run-syncdb

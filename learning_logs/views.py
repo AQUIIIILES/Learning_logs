@@ -52,6 +52,26 @@ def new_topic(request):
     context = {'form': form}
     return render(request, 'learning_logs/new_topic.html', context)
 
+@login_required
+def edit_topic(request, topic_id):
+   
+   topic = Topic.objects.get(id = topic_id)
+   
+   if topic.owner != request.user:
+       raise Http404
+   
+   if request.method != 'POST':
+       form = TopicForm(instance=topic)
+   else:
+       form = TopicForm(instance=topic, data=request.POST)
+       if form.is_valid():
+           form.save()
+           return HttpResponseRedirect(reverse('topics'))
+                   
+   context = {'form': form, 'topic': topic}
+   
+   return render(request,'learning_logs/edit_topic.html', context)
+
 @login_required    
 def new_entry(request, topic_id):
     """Acrescenta uma nova entrada para um assunto em particular."""

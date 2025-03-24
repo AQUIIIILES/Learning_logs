@@ -25,8 +25,8 @@ SECRET_KEY = 'django-insecure-wst8mht03!h8$19g7m2ewbsid=2u8l%vzdxaug8s4o6dt@o_*7
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
-#ALLOWED_HOSTS = ['108.167.151.69', 'seu-dominio.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1']
+#ALLOWED_HOSTS = ['AQUILES.pythonanywhere.com']
 
 
 # Application definition
@@ -59,15 +59,10 @@ SESSION_ENGINE = 'django.contrib.sessions.backends.db'
 
 ROOT_URLCONF = 'learning_log.urls'
 
-import os
-from pathlib import Path
-BASE_DIR = Path(__file__).resolve().parent.parent
-
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [str(BASE_DIR / 'learning_logs/Templates/learning_logs')],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -93,14 +88,24 @@ import os
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'AQUILES$learning_logs',
-        'USER': 'AQUILES',
-        'PASSWORD': 'Cr@102030',
+        'NAME': 'learning_logs',
+        'USER': 'root',
+        'PASSWORD': 'root',
         'HOST': 'localhost',
         'PORT': '3306',
         'OPTIONS': {
             'charset': 'utf8mb4',
         } 
+        # 'default': {
+        # 'ENGINE': 'django.db.backends.mysql',
+        # 'NAME': 'AQUILES$learning_logs',
+        # 'USER': 'AQUILES',
+        # 'PASSWORD': 'Cr@102030',
+        # 'HOST': 'AQUILES.mysql.pythonanywhere-services.com',
+        # 'PORT': '3306',
+        # 'OPTIONS': {
+        #     'charset': 'utf8mb4',
+        # }
     }
 }
 

@@ -1,26 +1,35 @@
 {% extends "learning_logs/base.html" %}
 
 {% block header %}
-    <h1>Tópicos:</h1>
+    <ol class="breadcrumb">
+        <li><h3>Tópicos</h3></li>
+    </ol>
 {% endblock header %}
 
 {% block content %}
-    <ul>
+
+        <h3>
+            <a href={% url 'new_topic' %}>Adicionar novos tópicos</a>
+        </h3>
+    
         {% for topic in topics %}
-            <li>
-                <h3>
-                    <a href="{% url 'topic' topic.id %}">{{ topic }}</a>
-                </h3>
-            </li>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4><a href="{% url 'topic' topic.id %}">{{ topic }}</a></h4>
+                </div>
+                <div class="panel-body">    
+                    <a>
+                        <a href="{% url 'edit_topic' topic.id %}"> Editar</a>
+                    </a>
+                    <a>
+                        <a href="#">Remover</a>
+                    </a>
+                </div>        
+            </div>
         {% empty %}
             <h3>
-                <li>Não há tópicos adicionados.</li>
+                <p class="list-group-item-text">Não há tópicos adicionados.</p>
             </h3>
         {% endfor %}    
-
-    </ul>
-    <h3>
-        <a href={% url 'new_topic' %}>Adicionar novos tópicos</a>
-    </h3>
 
 {% endblock content %}
