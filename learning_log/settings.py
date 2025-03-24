@@ -25,8 +25,8 @@ SECRET_KEY = 'django-insecure-wst8mht03!h8$19g7m2ewbsid=2u8l%vzdxaug8s4o6dt@o_*7
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1']
-#ALLOWED_HOSTS = ['AQUILES.pythonanywhere.com']
+#ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['AQUILES.pythonanywhere.com']
 
 
 # Application definition
@@ -86,26 +86,26 @@ WSGI_APPLICATION = 'learning_log.wsgi.application'
 import os
 
 DATABASES = {
-    'default': {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': 'learning_logs',
+    #     'USER': 'root',
+    #     'PASSWORD': 'root',
+    #     'HOST': 'localhost',
+    #     'PORT': '3306',
+    #     'OPTIONS': {
+    #         'charset': 'utf8mb4',
+    #     } 
+        'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'learning_logs',
-        'USER': 'root',
-        'PASSWORD': 'root',
-        'HOST': 'localhost',
+        'NAME': 'AQUILES$learning_logs',
+        'USER': 'AQUILES',
+        'PASSWORD': 'Cr@102030',
+        'HOST': 'AQUILES.mysql.pythonanywhere-services.com',
         'PORT': '3306',
         'OPTIONS': {
             'charset': 'utf8mb4',
-        } 
-        # 'default': {
-        # 'ENGINE': 'django.db.backends.mysql',
-        # 'NAME': 'AQUILES$learning_logs',
-        # 'USER': 'AQUILES',
-        # 'PASSWORD': 'Cr@102030',
-        # 'HOST': 'AQUILES.mysql.pythonanywhere-services.com',
-        # 'PORT': '3306',
-        # 'OPTIONS': {
-        #     'charset': 'utf8mb4',
-        # }
+        }
     }
 }
 
