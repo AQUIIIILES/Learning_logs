@@ -1,4 +1,5 @@
 {% extends "learning_logs/base.html" %}
+{% load bootstrap3 %}
 
 {% block header %}
     <h2><a href={% url 'topics' %}>{{ topic }}</a></h2>
@@ -6,16 +7,32 @@
 
 {% block content %}
 
-    <p><a href="{% url 'new_entry' topic.id %}">Adicione uma nova anotação</a></p>
-    
+    <h3>
+        <p><a href="{% url 'new_entry' topic.id %}">Adicione uma nova anotação</a></p>
+    </h3>
+
         {% for entry in entries %}
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3>
-                        {{ entry.date_added | date:'M d, Y H:i'}}
-                        <small>
-                            <a href="{% url 'edit_entry' entry.id %}">Editar anotação</a>
-                        </small>
+                    <h3 class='clearfix'>
+                        <span class='pull-left'>
+                            {{ entry.date_added | date:'M d, Y H:i'}}
+                        </span>
+
+                        <span >
+                            <form action="{% url 'edit_entry' entry.id %}" method='GET' style='display:inline-block; margin-right: 5px; margin-left: 15px'>
+                                {%csrf_token%}
+                                {% buttons %}
+                                    <button name='submit' class='btn btn-primary btn-sm'>Editar</button>
+                                {% endbuttons %}
+                            </form>
+                            <form id="delete-form-{{ entry.id }}" action="{% url 'remove_entry' entry.id %}" method='POST' style='display:inline-block; margin-right: 5px'>
+                                {% csrf_token %}
+                                {% buttons %}
+                                    <button onclick="return confirmDelete({{ topic.id }})" class='btn btn-danger btn-sm'>Remover</button>
+                                {% endbuttons %}
+                            </form>
+                        </span>
                     </h3>
                 </div>
 
@@ -32,17 +49,18 @@
         {% endfor %}
     </ul>
 
-    <p>Teste de ORM</p>
-
-    <ul>
-        
-        <li>
-
-            <p>{{ firsts }}  </p>
-                
-
-        </li>
-
-    </ul>    
+    <script>
+        function confirmDelete(topicId)
+        {
+            if (confirm("Tem certeza de que deseja excluir esta anotação?"))
+            {
+                document.getElementById("delete-form-" + topicId).submit();
+            }
+            else
+            {
+                return false;
+            }
+        }
+    </script>
 
 {% endblock content %}    

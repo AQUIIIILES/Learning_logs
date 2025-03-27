@@ -1,4 +1,5 @@
 {% extends "learning_logs/base.html" %}
+{% load bootstrap3 %}
 
 {% block header %}
     <ol class="breadcrumb">
@@ -17,19 +18,47 @@
                 <div class="panel-heading">
                     <h4><a href="{% url 'topic' topic.id %}">{{ topic }}</a></h4>
                 </div>
-                <div class="panel-body">    
-                    <a>
-                        <a href="{% url 'edit_topic' topic.id %}"> Editar</a>
-                    </a>
-                    <a>
-                        <a href="#">Remover</a>
-                    </a>
+                <div class="panel-body">
+
+                    <form action="{% url 'edit_topic' topic.id %}" method='GET' style='display:inline-block'>
+                        {% csrf_token %}
+                        
+                        {% buttons %}
+                            <button name='submit' class='btn btn-primary btn-sm'>Editar</button> 
+                        {% endbuttons %}
+
+                    </form>
+                    
+                    <form id="delete-form-{{ topic.id }}" action="{% url 'remove_topic' topic.id %}" method='POST' style='display:inline-block'>
+                        {% csrf_token %}
+
+                        {% buttons %}
+                            <button onclick="return confirmDelete({{ topic.id }})" class='btn btn-danger btn-sm'>Remover</button>
+                        {% endbuttons %}
+                    </form>
                 </div>        
             </div>
+
         {% empty %}
             <h3>
                 <p class="list-group-item-text">Não há tópicos adicionados.</p>
             </h3>
-        {% endfor %}    
+        {% endfor %}   
+        
+        <script>
+            
+            function confirmDelete(topicId)
+            {
+                if (confirm("Tem certeza que deseja excluir este tópico?")) 
+                {
+                    document.getElementById("delete-form-" + topicId).submit();
+                } 
+                else 
+                {
+                    return false;  // Evita a submissão do formulário
+                }
+            }
+            
+        </script>
 
 {% endblock content %}

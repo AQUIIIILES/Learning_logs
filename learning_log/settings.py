@@ -25,8 +25,8 @@ SECRET_KEY = 'django-insecure-wst8mht03!h8$19g7m2ewbsid=2u8l%vzdxaug8s4o6dt@o_*7
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-#ALLOWED_HOSTS = ['127.0.0.1']
-ALLOWED_HOSTS = ['AQUILES.pythonanywhere.com']
+ALLOWED_HOSTS = ['127.0.0.1']
+#ALLOWED_HOSTS = ['AQUILES.pythonanywhere.com']
 
 
 # Application definition
@@ -86,26 +86,26 @@ WSGI_APPLICATION = 'learning_log.wsgi.application'
 import os
 
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.mysql',
-    #     'NAME': 'learning_logs',
-    #     'USER': 'root',
-    #     'PASSWORD': 'root',
-    #     'HOST': 'localhost',
-    #     'PORT': '3306',
-    #     'OPTIONS': {
-    #         'charset': 'utf8mb4',
-    #     } 
     'default': {
-    'ENGINE': 'django.db.backends.mysql',
-    'NAME': 'AQUILES$learning_logs',
-    'USER': 'AQUILES',
-    'PASSWORD': 'Cr@102030',
-    'HOST': 'AQUILES.mysql.pythonanywhere-services.com',
-    'PORT': '3306',
-    'OPTIONS': {
-        'charset': 'utf8mb4',
-        }
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'learning_logs',
+        'USER': 'root',
+        'PASSWORD': 'root',
+        'HOST': 'localhost',
+        'PORT': '3306',
+        'OPTIONS': {
+            'charset': 'utf8mb4',
+        } 
+    # 'default': {
+    # 'ENGINE': 'django.db.backends.mysql',
+    # 'NAME': 'AQUILES$learning_logs',
+    # 'USER': 'AQUILES',
+    # 'PASSWORD': 'Cr@102030',
+    # 'HOST': 'AQUILES.mysql.pythonanywhere-services.com',
+    # 'PORT': '3306',
+    # 'OPTIONS': {
+    #     'charset': 'utf8mb4',
+    #     }
     }
 }
 
@@ -144,8 +144,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
+import os
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATIC_ROOT = '/home/AQUILES/Learning_logs/learning_logs/templates/static'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'learning_logs/static'),
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field

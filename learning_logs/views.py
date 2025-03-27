@@ -29,7 +29,7 @@ def topic(request, topic_id):
     entries = topic.entry_set.order_by('-date_added')
     last = topic.entry_set.last()
     first = topic.entry_set.first()
-    context = {'topic': topic, 'entries': entries, 'firsts': first, 'lasts': last}
+    context = {'topic': topic, 'entries': entries, 'first': first, 'last': last}
     return render(request, 'learning_logs/topic.html', context)
 
 @login_required
@@ -54,15 +54,20 @@ def new_topic(request):
 
 @login_required
 def edit_topic(request, topic_id):
+   """Edita um tópico existente"""
+   topic = Topic.objects.get(id=topic_id)
    
-   topic = Topic.objects.get(id = topic_id)
-   
+   #Garante que o assunto pertence ao usuário atual
    if topic.owner != request.user:
        raise Http404
    
    if request.method != 'POST':
+       #Requisição inicial
+       #Preenche previamente o formulário com a entrada atual
        form = TopicForm(instance=topic)
    else:
+       #Dados de Post submetidos
+       #Processa os dados
        form = TopicForm(instance=topic, data=request.POST)
        if form.is_valid():
            form.save()
@@ -72,6 +77,19 @@ def edit_topic(request, topic_id):
    
    return render(request,'learning_logs/edit_topic.html', context)
 
+@login_required
+def remove_topic(request, topic_id):
+    """Remove um tópico existente"""
+    topic = Topic.objects.get(id=topic_id)
+    
+    #Garante que o assunto pertence ao usuário
+    if topic.owner != request.user:
+        raise Http404
+    
+    topic.delete()
+    return HttpResponseRedirect(reverse('topics'))
+    
+    
 @login_required    
 def new_entry(request, topic_id):
     """Acrescenta uma nova entrada para um assunto em particular."""
@@ -104,7 +122,7 @@ def edit_entry(request, entry_id):
     entry = Entry.objects.get(id=entry_id)
     topic = entry.topic
     
-    # Garante que o assunto pertence ao usuário atual
+    #Garante que o assunto pertence ao usuário atual
     if topic.owner != request.user:
         raise Http404
     
@@ -122,3 +140,17 @@ def edit_entry(request, entry_id):
     
     context = {'entry': entry, 'topic':topic, 'form':form}
     return render(request, 'learning_logs/edit_entry.html', context)                
+
+@login_required
+def remove_entry(request, entry_id):
+    """Remove uma anotação existente"""
+    entry = Entry.objects.get(id=entry_id)
+    topic = entry.topic
+    
+    #Garante que o assunto pertence ao usuário
+    if topic.owner != request.user:
+        raise Http404
+    
+    entry.delete()
+    
+    return HttpResponseRedirect(reverse('topic', args=[topic.id]))
