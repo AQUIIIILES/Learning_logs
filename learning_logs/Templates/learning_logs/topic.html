@@ -1,65 +1,55 @@
 {% extends "learning_logs/base.html" %}
 {% load bootstrap3 %}
 
+{% block static_class %}entries-bg{% endblock static_class %}
+
 {% block header %}
-    <h2><a href={% url 'topics' %}>{{ topic }}</a></h2>
+    <a href={% url 'topics' %} style='color:black'>{{ topic }}</a>
 {% endblock header %}
 
 {% block content %}
 
-    <h3>
-        <p><a href="{% url 'new_entry' topic.id %}">Adicione uma nova anotação</a></p>
-    </h3>
+    <div class='form-group'>
+        <a href="{% url 'new_entry' topic.id %}" class='btn btn-success'>Adicionar</a>
+        <a href="{% url 'topics' %}" class='btn btn-default'>Voltar</a>
+    </div>
 
         {% for entry in entries %}
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class='clearfix'>
-                        <span class='pull-left'>
-                            {{ entry.date_added | date:'M d, Y H:i'}}
-                        </span>
+                    <div class='row'>
+                        <div class='col-xs-8'>
+                            <h4>{{ entry.date_added | date:'M d, Y H:i'}}</h4>
+                        </div>
 
-                        <span >
-                            <form action="{% url 'edit_entry' entry.id %}" method='GET' style='display:inline-block; margin-right: 5px; margin-left: 15px'>
-                                {%csrf_token%}
-                                {% buttons %}
-                                    <button name='submit' class='btn btn-primary btn-sm'>Editar</button>
-                                {% endbuttons %}
+                        <div class='col-xs-4 text-right'>
+                            <form action="{% url 'edit_entry' entry.id %}" method='GET' style='display:inline;'>
+                                <button type='submit' class='btn btn-primary'>Editar</button>
                             </form>
-                            <form id="delete-form-{{ entry.id }}" action="{% url 'remove_entry' entry.id %}" method='POST' style='display:inline-block; margin-right: 5px'>
+                            <form action="{% url 'remove_entry' entry.id %}" method='POST' style='display:inline;'>
                                 {% csrf_token %}
-                                {% buttons %}
-                                    <button onclick="return confirmDelete({{ topic.id }})" class='btn btn-danger btn-sm'>Remover</button>
-                                {% endbuttons %}
+                                <button onclick="return confirmDelete({{ topic.id }})" class='btn btn-danger'>Remover</button>
                             </form>
-                        </span>
-                    </h3>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="panel-body">
+                <div class='panel-body'>
                     {{ entry.text | linebreaks }}
                 </div>
                 
             </div>
             
         {% empty %}
-            <li>
-                Não há registro!
-            </li>    
+            <h4>
+                <p class='alert alert-warning'>Não há registros!</p>
+            </h4>
+          
         {% endfor %}
-    </ul>
-
     <script>
         function confirmDelete(topicId)
         {
-            if (confirm("Tem certeza de que deseja excluir esta anotação?"))
-            {
-                document.getElementById("delete-form-" + topicId).submit();
-            }
-            else
-            {
-                return false;
-            }
+            return confirm("Tem certeza de que deseja excluir esta anotação?")
         }
     </script>
 

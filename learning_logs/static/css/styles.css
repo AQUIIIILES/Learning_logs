@@ -1,0 +1,70 @@
+body 
+{
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat-y;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.jumbotron 
+{
+    background: rgba(0, 0, 0, 0); /* Fundo escuro semitransparente */
+    padding: 0px;
+    text-align: center;
+    border-radius: 10px; /* Bordas arredondadas */
+    max-width: 720px; /* Largura máxima para não ficar muito grande */
+    margin: 30px auto; /* Centraliza horizontalmente */
+}
+
+.jumbotron h1 
+{
+    color: white; /* Texto branco para destacar */
+    font-weight: bold; /* Deixa o texto mais forte */
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 1), 
+               0px 0px 5px rgba(0, 0, 0, 0.9);  /* Sombra para melhorar legibilidade */
+}
+
+.custom-box 
+{
+    background: rgba(0, 0, 0, 0);
+    padding: 10px;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 10px;
+    width: 80%;
+    color: white; /* Texto branco para destacar */
+    font-size: 40px; /* Tamanho da fonte aumentado */
+    font-weight: bold; /* Deixa o texto mais forte */
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 1), 
+               0px 0px 5px rgba(0, 0, 0, 0.9);  /* Sombra para melhorar legibilidade */
+}
+
+/* Remove qualquer fundo de `.page-header` */
+.page-header 
+{
+    background: transparent !important;
+    border-bottom: none !important;
+    padding: 20px 0;
+}
+
+.index-bg 
+{
+    background-image: url("/static/images/INDEX.jpg"); /* Caminho relativo ao arquivo CSS */
+   
+}
+
+.topics-bg 
+{
+    background-image: url("/static/images/TOPICS.png"); /* Caminho relativo ao arquivo CSS */
+ 
+}
+
+.entries-bg 
+{
+    background-image: url("/static/images/ENTRIES.jpg"); /* Caminho relativo ao arquivo CSS */
+
+}

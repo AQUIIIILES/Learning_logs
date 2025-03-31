@@ -1,5 +1,7 @@
 {% extends "learning_logs/base.html" %}
 
+{% block static_class %}index-bg{% endblock static_class %}
+
 {% block header %}
     <div class="jumbotron">
         <h1>Acompanhe seu aprendizado</h1>
@@ -10,24 +12,24 @@
 
     {% if user.is_authenticated %}
     
-        <h2>
+        <div class='custom-box'>
             Sempre que você aprender algo novo sobre um tópico,
             faça uma entrada resumindo o que você aprendeu.
-        </h2>
+        </div>
 
     {% else %}
 
-        <h2>
-            <a href="{% url 'register' %}">Crie uma conta</a>
+        <div class='custom-box'>
+            <a href="{% url 'register' %}" style='color: red'>Crie uma conta</a>
             para utilizar o Learning Log e liste os tópicos
             que você está aprendendo 
-        </h2>
+        </div>
 
-        <h2>
+        <div class="custom-box">
             Sempre que você aprender algo novo sobre um tópico,
             faça uma entrada resumindo o que você aprendeu.
-        </h2>
+        </div>        
         
-    {% endif %}
-
+    {% endif %}    
+    
 {% endblock content %}

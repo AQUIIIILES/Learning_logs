@@ -1,28 +1,26 @@
 {% extends "learning_logs/base.html" %}
 {% load bootstrap3 %}
 
+{% block static_class %}topics-bg{% endblock static_class %}
+
 {% block header %}
-       <h3>Adicione um novo tópico:</h3>
+    <a href="{% url 'topics' %}">Tópicos</a>
 {% endblock header %}
 
 {% block content %}
 
-    <form action="{% url 'new_topic' %}" method='post' class="form">
+    <div class='alert alert-info' role='alert'>
+        <h4>Adicione um novo tópico:</h4>
+    </div>
+
+    <form action="{% url 'new_topic' %}" method='post' class='form'>
         {% csrf_token %}
         {% bootstrap_form form %}
-
-        {% buttons %}
-            <button name='submit' class='btn btn-primary'>Adicionar</button>
-        {% endbuttons %}
+        
+        <div class='form-group'>
+            <button type='submit' class='btn btn-success'>Adicionar</button>
+            <a href="{% url 'topics' %}" class='btn btn-default'>Voltar</a>
+        </div>
     </form>
-
-    <form action="{% url 'topics' %}" method='POST'>
-        {% csrf_token %}
-
-        {% buttons %}
-            <button name='submit' class='btn btn-secondary'>Voltar</button>
-        {% endbuttons %}
-    </form>
-
-  
+       
 {% endblock content %}

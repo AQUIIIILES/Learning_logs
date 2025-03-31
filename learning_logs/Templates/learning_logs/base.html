@@ -1,4 +1,5 @@
 {% load bootstrap3  %}
+{% load static  %}
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -16,12 +17,16 @@
         {% bootstrap_css %}
         {% bootstrap_javascript %}
         
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
         <style>
-            .ul-none ul{
+            .ul-none ul
+            {
                 display: none;
             }
             
-            .help-block{
+            .help-block
+            {
                 display: none;
             }
 
@@ -29,7 +34,7 @@
 
     </head>
 
-    <body>
+    <body class="{% block static_class %}{% endblock static_class %}">
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container">
                 <div class="navbar-header">
@@ -66,7 +71,7 @@
         </nav>
         <div class="container">
             <div class="page-header">
-                {% block header %} {% endblock header %} 
+                 <h3>{% block header %} {% endblock header %}</h3>
             </div>
             <div>
                 {% block content %} {% endblock content %}

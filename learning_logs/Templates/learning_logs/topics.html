@@ -1,62 +1,49 @@
 {% extends "learning_logs/base.html" %}
 {% load bootstrap3 %}
 
+{% block static_class %}topics-bg{% endblock static_class %}
+
 {% block header %}
-    <ol class="breadcrumb">
-        <li><h3>Tópicos</h3></li>
-    </ol>
+    Tópicos
 {% endblock header %}
 
 {% block content %}
 
-        <h3>
-            <a href={% url 'new_topic' %}>Adicionar novos tópicos</a>
-        </h3>
-    
+        <div class='form-group'>
+            <a href="{% url 'new_topic' %}" class='btn btn-success'>Adicionar</a>
+            <a href="{% url 'index' %}" class='btn btn-default'>Voltar</a>
+        </div>
+
         {% for topic in topics %}
-            <div class="panel panel-default">
+            <div class='panel panel-default'>
                 <div class="panel-heading">
-                    <h4><a href="{% url 'topic' topic.id %}">{{ topic }}</a></h4>
-                </div>
-                <div class="panel-body">
-
-                    <form action="{% url 'edit_topic' topic.id %}" method='GET' style='display:inline-block'>
-                        {% csrf_token %}
-                        
-                        {% buttons %}
-                            <button name='submit' class='btn btn-primary btn-sm'>Editar</button> 
-                        {% endbuttons %}
-
-                    </form>
-                    
-                    <form id="delete-form-{{ topic.id }}" action="{% url 'remove_topic' topic.id %}" method='POST' style='display:inline-block'>
-                        {% csrf_token %}
-
-                        {% buttons %}
-                            <button onclick="return confirmDelete({{ topic.id }})" class='btn btn-danger btn-sm'>Remover</button>
-                        {% endbuttons %}
-                    </form>
-                </div>        
+                    <h4>
+                        <a href="{% url 'topic' topic.id %}">{{ topic }}</a>
+                        <span class="pull-right">
+                            <form action="{% url 'edit_topic' topic.id %}" method='GET' style='display:inline;'>
+                                <button type='submit' class='btn btn-primary'>Editar</button> 
+                            </form>
+                            
+                            <form action="{% url 'remove_topic' topic.id %}" method='POST' style='display:inline;'>
+                                {% csrf_token %}
+                                <button type='submit' onclick='return confirmDelete();' class='btn btn-danger'>Remover</button>  
+                            </form>
+                        </span>
+                    </h4>
+                </div>   
             </div>
 
         {% empty %}
-            <h3>
-                <p class="list-group-item-text">Não há tópicos adicionados.</p>
-            </h3>
+            <h4>
+                <p class='alert alert-warning'>Não há tópicos adicionados!</p>
+            </h4>
         {% endfor %}   
         
         <script>
             
-            function confirmDelete(topicId)
+            function confirmDelete()
             {
-                if (confirm("Tem certeza que deseja excluir este tópico?")) 
-                {
-                    document.getElementById("delete-form-" + topicId).submit();
-                } 
-                else 
-                {
-                    return false;  // Evita a submissão do formulário
-                }
+                return confirm("Tem certeza que deseja excluir este tópico?");
             }
             
         </script>

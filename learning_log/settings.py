@@ -149,7 +149,7 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 STATIC_URL = '/static/'
-STATIC_ROOT = '/home/AQUILES/Learning_logs/learning_logs/templates/static'
+STATIC_ROOT = '/home/AQUILES/Learning_logs/learning_logs/static'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'learning_logs/static'),
 ]
